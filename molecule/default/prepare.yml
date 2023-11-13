@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  become: false
+  gather_facts: false
+
+  vars:
+    hugo_version: '0.117.0'
+
+  roles:
+    - m18unet.hugo

@@ -1,0 +1,32 @@
+---
+galaxy_info:
+  author: m18unet
+  role_name: hugo
+  description: An Ansible Role that installs hugo.
+
+  license: MIT
+
+  min_ansible_version: 2.10.0
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+
+  galaxy_tags:
+    - hugo
+    - static-site-generator
+    - cms
+    - content-management-system
+    - documentation-tool
+    - blog-engine
+    - cncf

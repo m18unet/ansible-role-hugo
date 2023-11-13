@@ -1,0 +1,11 @@
+---
+# See available releases: https://github.com/gohugoio/hugo/releases
+hugo_version: '0.120.4'
+hugo_platform: linux
+hugo_arch: amd64
+hugo_bin_path: /usr/local/bin/hugo
+hugo_release_url: https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}
+hugo_archive_name: hugo_{{ hugo_version }}_{{ hugo_platform }}-{{ hugo_arch }}.tar.gz
+hugo_checksum_name: hugo_{{ hugo_version }}_checksums.txt
+hugo_download_url: "{{ hugo_release_url }}/{{ hugo_archive_name }}"
+hugo_checksum_url: "{{ hugo_release_url }}/{{ hugo_checksum_name }}"

@@ -1,0 +1,23 @@
+---
+- name: Download the hugo archive.
+  get_url:
+    url: "{{ hugo_download_url }}"
+    dest: /tmp
+    checksum: sha256:{{ hugo_checksum_url }}
+    mode: 0755
+  register: hugo_download
+
+- name: Unarchive the hugo archive.
+  unarchive:
+    src: "{{ hugo_download.dest }}"
+    dest: /tmp
+    mode: 0755
+    remote_src: true
+
+- name: Copy the hugo binary into place.
+  copy:
+    src: /tmp/hugo
+    dest: "{{ hugo_bin_path }}"
+    mode: 0755
+    remote_src: true
+  become: true

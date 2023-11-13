@@ -1,0 +1,17 @@
+---
+- name: Check the presence of the hugo binary.
+  stat:
+    path: "{{ hugo_bin_path }}"
+  register: hugo_check
+
+- name: Check the hugo version.
+  shell: "{{ hugo_bin_path }} version | grep -oP 'v[^-]+'"
+  failed_when: false
+  changed_when: false
+  register: hugo_current_version
+
+- name: Install hugo v{{ hugo_version }}
+  include_tasks: install.yml
+  when: >-
+    not hugo_check.stat.exists
+    or hugo_version not in hugo_current_version.stdout
